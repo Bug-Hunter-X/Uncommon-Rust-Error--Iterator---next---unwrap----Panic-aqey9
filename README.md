@@ -1,0 +1,3 @@
+This repository demonstrates a common but easily overlooked error in Rust: using `.unwrap()` on an iterator's `.next()` method without checking for emptiness.  The `bug.rs` file shows the erroneous code, while `bugSolution.rs` provides a safer, more robust solution.
+
+The problem arises when you assume an iterator will always have a next element. If the iterator is unexpectedly empty, `.unwrap()` will panic, causing the program to crash.  This is particularly subtle in cases where the iterator is derived from a data structure that might be empty under certain conditions.
